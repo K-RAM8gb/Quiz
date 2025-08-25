@@ -1,0 +1,18 @@
+
+[
+  {
+    "question": "What is the capital of France?",
+    "options": ["London", "Berlin", "Paris", "Madrid"],
+    "answer": "Paris"
+  },
+  {
+    "question": "Which language runs in a web browser?",
+    "options": ["Python", "C++", "Java", "JavaScript"],
+    "answer": "JavaScript"
+  },
+  {
+    "question": "Who developed the theory of relativity?",
+    "options": ["Newton", "Einstein", "Tesla", "Darwin"],
+    "answer": "Einstein"
+  }
+]
