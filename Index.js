@@ -10,16 +10,16 @@ async function getQuestions() {
     return await response.json();
 }
 
-async function init() {
-    const questions = await getQuestions();
-    console.log(questions);
-    return questions
-}
 
-let y = init();
+
+let y = getQuestions();
+async function nme() {
+    question = await y;
+    return question
+}
 questions = [1,2];
 
-
+nme();
 
         // Quiz questions
 
@@ -42,7 +42,8 @@ questions = [1,2];
         // Quiz state
         let currentQuestion = 0;
         let userAnswers = Array(questions.length).fill(null);
-        let score = 0;
+        console.log(userAnswers);
+        let score = 0;a
 
         // Start quiz
         startBtn.addEventListener('click', () => {
@@ -103,8 +104,10 @@ questions = [1,2];
         });
 
         // Show current question
-        function showQuestion(index) {
-            const question = questions[index];
+        async function showQuestion(index) {
+            const question = await nme();
+            console.log(question);
+            console.log(question[0]);
             let optionsHtml = '';
             
             question.options.forEach((option, i) => {
