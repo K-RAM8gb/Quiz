@@ -1,37 +1,28 @@
+const API_URL = "https://quizapi.io/api/v1/questions";
+const API_KEY = "8BzTEvwjCsaRywhGI2gkkF7hTMOTGiKNU1wXb6Dx";
+
+const questionElement = document.getElementById("question");
+const optionsElement = document.getElementById("options");
+
+async function getQuestions() {
+    
+    const response = await fetch(`${API_URL}?apiKey=${API_KEY}&limit=5`);
+    return await response.json();
+}
+
+async function init() {
+    const questions = await getQuestions();
+    console.log(questions);
+    return questions
+}
+
+let y = init();
+questions = [1,2];
+
+
 
         // Quiz questions
-        const questions = [
-            {
-                question: "What is the capital of France?",
-                options: ["London", "Berlin", "Paris", "Madrid"],
-                correctAnswer: 2,
-                explanation: "Paris is the capital and most populous city of France."
-            },
-            {
-                question: "Which planet is known as the Red Planet?",
-                options: ["Venus", "Mars", "Jupiter", "Saturn"],
-                correctAnswer: 1,
-                explanation: "Mars is often called the 'Red Planet' because of its reddish appearance."
-            },
-            {
-                question: "What is the largest mammal in the world?",
-                options: ["Elephant", "Blue Whale", "Giraffe", "Polar Bear"],
-                correctAnswer: 1,
-                explanation: "The blue whale is the largest mammal and the largest animal to have ever existed."
-            },
-            {
-                question: "Who painted the Mona Lisa?",
-                options: ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Michelangelo"],
-                correctAnswer: 2,
-                explanation: "The Mona Lisa was painted by Leonardo da Vinci in the early 16th century."
-            },
-            {
-                question: "What is the chemical symbol for gold?",
-                options: ["Go", "Gd", "Au", "Ag"],
-                correctAnswer: 2,
-                explanation: "The chemical symbol for gold is Au, from the Latin word 'aurum'."
-            }
-        ];
+
 
         // DOM elements
         const welcomeScreen = document.getElementById('welcome-screen');
