@@ -1,5 +1,5 @@
 const API_URL = "https://quizapi.io/api/v1/questions";
-const API_KEY = "8BzTEvwjCsaRywhGI2gkkF7hTMOTGiKNU1wXb6Dx";
+const API_KEY = "vJEcyVnGBK1tviPtiIh1yGmpIYbTkgNhq64BtvGs";
 
 const questionElement = document.getElementById("question");
 const optionsElement = document.getElementById("options");
@@ -22,7 +22,38 @@ questions = [1,2];
 nme();
 
         // Quiz questions
-
+        const questions = [
+            {
+                question: "What is the capital of France?",
+                options: ["London", "Berlin", "Paris", "Madrid"],
+                correctAnswer: 2,
+                explanation: "Paris is the capital and most populous city of France."
+            },
+            {
+                question: "Which planet is known as the Red Planet?",
+                options: ["Venus", "Mars", "Jupiter", "Saturn"],
+                correctAnswer: 1,
+                explanation: "Mars is often called the 'Red Planet' because of its reddish appearance."
+            },
+            {
+                question: "What is the largest mammal in the world?",
+                options: ["Elephant", "Blue Whale", "Giraffe", "Polar Bear"],
+                correctAnswer: 1,
+                explanation: "The blue whale is the largest mammal and the largest animal to have ever existed."
+            },
+            {
+                question: "Who painted the Mona Lisa?",
+                options: ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Michelangelo"],
+                correctAnswer: 2,
+                explanation: "The Mona Lisa was painted by Leonardo da Vinci in the early 16th century."
+            },
+            {
+                question: "What is the chemical symbol for gold?",
+                options: ["Go", "Gd", "Au", "Ag"],
+                correctAnswer: 2,
+                explanation: "The chemical symbol for gold is Au, from the Latin word 'aurum'."
+            }
+        ];
 
         // DOM elements
         const welcomeScreen = document.getElementById('welcome-screen');
@@ -42,8 +73,7 @@ nme();
         // Quiz state
         let currentQuestion = 0;
         let userAnswers = Array(questions.length).fill(null);
-        console.log(userAnswers);
-        let score = 0;a
+        let score = 0;
 
         // Start quiz
         startBtn.addEventListener('click', () => {
@@ -104,10 +134,8 @@ nme();
         });
 
         // Show current question
-        async function showQuestion(index) {
-            const question = await nme();
-            console.log(question);
-            console.log(question[0]);
+        function showQuestion(index) {
+            const question = questions[index];
             let optionsHtml = '';
             
             question.options.forEach((option, i) => {

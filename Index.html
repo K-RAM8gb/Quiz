@@ -46,7 +46,7 @@
 
             <div class="card relative bg-white rounded-xl shadow-lg overflow-hidden group">
                 <div id = "Python">
-                <a href="Quiz.html">
+                <a href="hi.html">
                 <div class="glow bg-blue-500"></div>
                 <div class="p-6">
                     <div class="flex justify-center mb-6">
@@ -70,7 +70,7 @@
 
             <!-- HTML Card -->
             <div id="HTML" class="card relative bg-white rounded-xl shadow-lg overflow-hidden group">
-                <a href="Quiz.html">
+                <a href="hi.html">
                 <div class="glow bg-orange-500"></div>
                 <div class="p-6">
                     <div class="flex justify-center mb-6">
@@ -93,7 +93,7 @@
 
             <!-- JavaScript Card -->
             <div id="java" class="card relative bg-white rounded-xl shadow-lg overflow-hidden group">
-                <a href="Quiz.html">
+                <a href="hi.html">
                 <div class="glow bg-yellow-500"></div>
                 <div class="p-6">
                     <div class="flex justify-center mb-6">
@@ -124,20 +124,20 @@
         Python.addEventListener('click',function(e){
             e.preventDefault();
             x = "1";
-            localStorage.setItem('Changer',x);
-            window.location.href = "Quiz.html"
+            sessionStorage.setItem('Changer',x);
+            window.location.href = "hi.html"
         })
         HTML.addEventListener('click',function(e){
             e.preventDefault();
             x = "2";
-            localStorage.setItem('Changer',x);
-            window.location.href = "Quiz.html"
+            sessionStorage.setItem('Changer',x);
+            window.location.href = "hi.html"
         })
         java.addEventListener('click',function(e){
             e.preventDefault();
             x = "3";
-            localStorage.setItem('Changer',x);
-            window.location.href = "Quiz.html";
+            sessionStorage.setItem('Changer',x);
+            window.location.href = "hi.html";
         })
     </script>
 
