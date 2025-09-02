@@ -1,145 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Development Quiz</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .card {
-            transition: all 0.3s ease;
-            transform-style: preserve-3d;
-        }
-        .card:hover {
-            transform: translateY(-10px) rotateX(5deg);
-            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.2);
-        }
-        .card-icon {
-            transition: all 0.3s ease;
-        }
-        .card:hover .card-icon {
-            transform: scale(1.1);
-        }
-        .glow {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: inherit;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .card:hover .glow {
-            opacity: 0.2;
-        }
-    </style>
-</head>
-<body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
-    <div class="container mx-auto px-4 py-12">
-        <header class="text-center mb-16">
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Web Development Quiz</h1>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Explore the fundamental technologies that power the modern web</p>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Lexend%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>HOME</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div
+      class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden"
+      style="--select-button-svg: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724px%27 height=%2724px%27 fill=%27rgb(99,116,136)%27 viewBox=%270 0 256 256%27%3e%3cpath d=%27M181.66,170.34a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-48-48a8,8,0,0,1,11.32-11.32L128,212.69l42.34-42.35A8,8,0,0,1,181.66,170.34Zm-96-84.68L128,43.31l42.34,42.35a8,8,0,0,0,11.32-11.32l-48-48a8,8,0,0,0-11.32,0l-48,48A8,8,0,0,0,85.66,85.66Z%27%3e%3c/path%3e%3c/svg%3e'); font-family: Lexend, &quot;Noto Sans&quot;, sans-serif;"
+    >
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f4] px-10 py-3">
+          <div class="flex items-center gap-4 text-[#111418]">
+            <div class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path></svg>
+            </div>
+            <h2 class="text-[#111418] text-lg font-bold leading-tight tracking-[-0.015em]">Quiz</h2>
+          </div>
         </header>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <!-- Python Card -->
-
-            <div class="card relative bg-white rounded-xl shadow-lg overflow-hidden group">
-                <div id = "Python">
-                <a href="hi.html">
-                <div class="glow bg-blue-500"></div>
-                <div class="p-6">
-                    <div class="flex justify-center mb-6">
-                        <div class="card-icon bg-blue-100 p-4 rounded-full">
-                            <i class="fab fa-python text-blue-600 text-4xl"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-3 text-center">Python</h3>
-                    <p class="text-gray-600 mb-4 text-center">
-                        A versatile, high-level programming language known for its readability and broad applications.
-                    </p>
-                </div>
-                <div class="px-6 py-4 bg-gray-50 border-t border-gray-100">
-                    <a href="#" class="block text-center text-blue-600 font-medium hover:text-blue-800 transition">
-                        Take Quiz <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-                </a>
-                </div>
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col w-[512px] max-w-[512px] py-5 max-w-[960px] flex-1">
+            <h2 class="text-[#111418] tracking-light text-[28px] font-bold leading-tight px-4 text-center pb-3 pt-5">Ready for Your Quiz?</h2>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-[#111418] text-base font-medium leading-normal pb-2">Select Category</p>
+                <select id="option"
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111418] focus:outline-0 focus:ring-0 border border-[#dce0e5] bg-white focus:border-[#dce0e5] h-14 bg-[image:--select-button-svg] placeholder:text-[#637488] p-[15px] text-base font-normal leading-normal"
+                >
+                  <option value="one">Choose a category</option>
+                  <option value="nodejs">NodeJs</option>
+                  <option value="HTML">HTML</option>
+                  <option value="linux">Linux</option>
+                </select>
+              </label>
             </div>
-
-            <!-- HTML Card -->
-            <div id="HTML" class="card relative bg-white rounded-xl shadow-lg overflow-hidden group">
-                <a href="hi.html">
-                <div class="glow bg-orange-500"></div>
-                <div class="p-6">
-                    <div class="flex justify-center mb-6">
-                        <div class="card-icon bg-orange-100 p-4 rounded-full">
-                            <i class="fab fa-html5 text-orange-600 text-4xl"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-3 text-center">HTML</h3>
-                    <p class="text-gray-600 mb-4 text-center">
-                        The standard markup language for documents designed to be displayed in a web browser.
-                    </p>
-                </div>
-                <div class="px-6 py-4 bg-gray-50 border-t border-gray-100">
-                    <a href="#" class="block text-center text-orange-600 font-medium hover:text-orange-800 transition">
-                        Take Quiz <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-                </a>
+            <div class="flex flex-wrap gap-3 p-4">
+              <label
+                class="text-sm font-medium leading-normal flex items-center justify-center rounded-lg border border-[#dce0e5] px-4 h-11 text-[#111418] has-[:checked]:border-[3px] has-[:checked]:px-3.5 has-[:checked]:border-[#1979e6] relative cursor-pointer"
+              >
+                5 Questions
+                <input type="radio" value="5" class="invisible absolute" name="Count" />
+              </label>
+              <label
+                class="text-sm font-medium leading-normal flex items-center justify-center rounded-lg border border-[#dce0e5] px-4 h-11 text-[#111418] has-[:checked]:border-[3px] has-[:checked]:px-3.5 has-[:checked]:border-[#1979e6] relative cursor-pointer"
+              >
+                10 Questions
+                <input type="radio" value="10" class="invisible absolute" name="Count" />
+              </label>
+              <label
+                class="text-sm font-medium leading-normal flex items-center justify-center rounded-lg border border-[#dce0e5] px-4 h-11 text-[#111418] has-[:checked]:border-[3px] has-[:checked]:px-3.5 has-[:checked]:border-[#1979e6] relative cursor-pointer"
+              >
+                15 Questions
+                <input type="radio" value="15" class="invisible absolute" name="Count" />
+              </label>
             </div>
-
-            <!-- JavaScript Card -->
-            <div id="java" class="card relative bg-white rounded-xl shadow-lg overflow-hidden group">
-                <a href="hi.html">
-                <div class="glow bg-yellow-500"></div>
-                <div class="p-6">
-                    <div class="flex justify-center mb-6">
-                        <div class="card-icon bg-yellow-100 p-4 rounded-full">
-                            <i class="fab fa-js-square text-yellow-600 text-4xl"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-3 text-center">JavaScript</h3>
-                    <p class="text-gray-600 mb-4 text-center">
-                        A scripting language that enables dynamic interactivity on websites and powers modern web apps.
-                    </p>
-                    
-                </div>
-                <div class="px-6 py-4 bg-gray-50 border-t border-gray-100">
-                    <a href="#" class="block text-center text-yellow-600 font-medium hover:text-yellow-800 transition">
-                        Take Quiz <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-                </a>
+            <div class="flex px-4 py-3">
+              <a href="Quiz.html"><button
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 flex-1 bg-[#1979e6] text-white text-base font-bold leading-normal tracking-[0.015em]"
+              >
+                <span class="truncate" id="Start">Start Quiz</span>
+              </button></a>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+
+
     <script>
-        const Python = document.getElementById("Python");
-        const java = document.getElementById("java");
-        const HTML = document.getElementById("HTML");
-        let x = 0;
-        Python.addEventListener('click',function(e){
-            e.preventDefault();
-            x = "1";
-            sessionStorage.setItem('Changer',x);
-            window.location.href = "hi.html"
-        })
-        HTML.addEventListener('click',function(e){
-            e.preventDefault();
-            x = "2";
-            sessionStorage.setItem('Changer',x);
-            window.location.href = "hi.html"
-        })
-        java.addEventListener('click',function(e){
-            e.preventDefault();
-            x = "3";
-            sessionStorage.setItem('Changer',x);
-            window.location.href = "hi.html";
-        })
+      const Start = document.getElementById("Start");
+      const dropdown = document.getElementById("option");
+      dropdown.value ="one";
+      Start.addEventListener('click',()=>{ 
+        const Option = dropdown.value;
+        sessionStorage.setItem('Option',Option);
+        const radio = document.querySelector('input[name="Count"]:checked');
+        let question_count = radio.value;
+        if (!radio) {
+          alert("Please select the number of questions!");
+          return;
+        }
+        sessionStorage.setItem('question_count',question_count);
+        setTimeout( ()=>{
+          location.reload()
+        },100);
+    });
     </script>
 
-</body>
+
+
+
+
+  </body>
 </html>
