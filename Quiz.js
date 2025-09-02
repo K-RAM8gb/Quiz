@@ -18,6 +18,8 @@ const Answer_3 = document.getElementById("Answer_3");
 const Answer_4 = document.getElementById("Answer_4");
 
 let questions = [];
+let selected_ans =[];
+let explain = [];
 
 async function loadQuestions() {
     try {
@@ -48,6 +50,8 @@ function showQuestion(index) {
     Answer_2.innerText = q.answers.answer_b || "";
     Answer_3.innerText = q.answers.answer_c || "";
     Answer_4.innerText = q.answers.answer_d || "";
+    explain.push(q.explanation);
+    
 
     // Reset previous selection
     document.querySelectorAll('input[name="options"]').forEach(opt => opt.checked = false);
@@ -63,15 +67,19 @@ function handleNext() {
     // Check correctness
     const correct = questions[currentQuestion - 1].correct_answers[`answer_${selected.value}_correct`] === "true";
     if (correct) {
+        selected_ans.push(1);
         score++;
-        console.log("Score:", score);
+    }else{
+        selected_ans.push(0);
     }
 
     // Move to next question
     currentQuestion++;
     if (currentQuestion > limit) {
         sessionStorage.setItem('score', score);
-        sessionStorage.setItem('Questions',questions);
+        sessionStorage.setItem('explain', JSON.stringify(explain));
+        sessionStorage.setItem('Sel_ans', JSON.stringify(selected_ans));
+        console.log(explain);
         window.location.href = "REsults.html";
         setTimeout(() => {
             location.reload(); // to get new questions if the user tried to go back to the questions after submitting
