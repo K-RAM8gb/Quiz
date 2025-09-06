@@ -102,9 +102,6 @@ function handleNext() {
         sessionStorage.setItem('Correct_ans', JSON.stringify(correct_ans));
         console.log(explain);
         window.location.href = "REsults.html";
-        setTimeout(() => {
-            location.reload(); // to get new questions if the user tried to go back to the questions after submitting
-        }, 100);
         return;
     }
 
